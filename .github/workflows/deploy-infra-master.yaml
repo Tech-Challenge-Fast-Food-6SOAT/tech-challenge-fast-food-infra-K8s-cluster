@@ -1,4 +1,4 @@
-name: "Terraform deploy"
+name: "Terraform deploy infra"
 
 on:
   push: 
@@ -7,12 +7,11 @@ on:
   workflow_dispatch:
 
 env:
-  TF_VAR_mongodb_url: ${{ secrets.TF_VAR_MONGODB_URL }}
   TF_VAR_role_arn: ${{ secrets.TF_VAR_ROLE_ARN }}
 
 jobs: 
   terraform:
-    name: "Terraform deploy"
+    name: "Terraform deploy infra"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Configure AWS Credentials" 
