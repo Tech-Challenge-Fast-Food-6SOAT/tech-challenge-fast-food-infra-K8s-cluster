@@ -8,10 +8,6 @@ variable "aws_igw_name" {
   default = "lanchonete-igw"
 }
 
-variable "mongodb_url" {
-  type = string
-}
-
 variable "role_arn" {
   type        = string
   description = "The ARN of the IAM Role"
