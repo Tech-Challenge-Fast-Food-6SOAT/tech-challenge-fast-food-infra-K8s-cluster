@@ -1,9 +1,6 @@
 # Cluster EKS
 Projeto do curso de pós graduação da FIAP
 
-## Requisitos para deploy
-- Banco de dados em produção
-
 ## Secrets
 Secrets cadastradas no repositório do GitHub
 
@@ -14,5 +11,4 @@ AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 AWS_SESSION_TOKEN
 GCP_SA_KEY
-MONGODB_URL
 ```
