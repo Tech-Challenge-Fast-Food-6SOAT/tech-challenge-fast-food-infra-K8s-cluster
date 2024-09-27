@@ -12,3 +12,8 @@ variable "role_arn" {
   type        = string
   description = "The ARN of the IAM Role"
 }
+
+variable "mongodb_url" {
+  type        = string
+  description = "The MongoDB URL"
+}

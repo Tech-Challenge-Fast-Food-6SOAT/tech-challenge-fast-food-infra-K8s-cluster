@@ -5,4 +5,5 @@ locals {
   zone2       = "us-east-1b"
   eks_version = "1.30"
   eks_name    = "lanchonete-cluster"
+  namespace   = "lanchonete"
 }
