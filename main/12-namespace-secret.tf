@@ -19,7 +19,7 @@ resource "kubernetes_secret" "lanchonete_pedido_secret" {
   }
 
   data = {
-    MONGODB_URL = var.mongodb_url
+    MONGODB_CONNECTION_STRING_PEDIDO = var.mongodb_connection_string_pedido
   }
 
   type       = "Opaque"
@@ -41,7 +41,7 @@ resource "kubernetes_secret" "lanchonete_produto_secret" {
   }
 
   data = {
-    MONGODB_URL = var.mongodb_url
+    MONGODB_CONNECTION_STRING_PRODUTO = var.mongodb_connection_string_produto
   }
 
   type       = "Opaque"
@@ -63,7 +63,7 @@ resource "kubernetes_secret" "lanchonete_pagamento_secret" {
   }
 
   data = {
-    MONGODB_URL = var.mongodb_url
+    POSTGRESQL_CONNECTION_STRING_PAGAMENTO = var.postgresql_connection_string_pagamento
   }
 
   type       = "Opaque"
