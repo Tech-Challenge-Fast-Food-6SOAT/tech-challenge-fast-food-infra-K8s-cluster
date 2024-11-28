@@ -20,6 +20,9 @@ resource "kubernetes_secret" "lanchonete_pedido_secret" {
 
   data = {
     MONGODB_CONNECTION_STRING_PEDIDO = var.mongodb_connection_string_pedido
+    AWS_ACCESS_KEY_ID                = var.aws_access_key_id
+    AWS_SECRET_ACCESS_KEY            = var.aws_secret_access_key
+    AWS_SESSION_TOKEN                = var.aws_session_token
   }
 
   type       = "Opaque"
@@ -42,6 +45,9 @@ resource "kubernetes_secret" "lanchonete_produto_secret" {
 
   data = {
     MONGODB_CONNECTION_STRING_PRODUTO = var.mongodb_connection_string_produto
+    AWS_ACCESS_KEY_ID                 = var.aws_access_key_id
+    AWS_SECRET_ACCESS_KEY             = var.aws_secret_access_key
+    AWS_SESSION_TOKEN                 = var.aws_session_token
   }
 
   type       = "Opaque"
@@ -64,6 +70,9 @@ resource "kubernetes_secret" "lanchonete_pagamento_secret" {
 
   data = {
     POSTGRESQL_CONNECTION_STRING_PAGAMENTO = var.postgresql_connection_string_pagamento
+    AWS_ACCESS_KEY_ID                      = var.aws_access_key_id
+    AWS_SECRET_ACCESS_KEY                  = var.aws_secret_access_key
+    AWS_SESSION_TOKEN                      = var.aws_session_token
   }
 
   type       = "Opaque"

@@ -27,3 +27,18 @@ variable "postgresql_connection_string_pagamento" {
   type        = string
   description = "The PostgreSQL connnection string"
 }
+
+variable "aws_access_key_id" {
+  type        = string
+  description = "The AWS Access Key ID"
+}
+
+variable "aws_secret_access_key" {
+  type        = string
+  description = "The AWS Secret Access Key"
+}
+
+variable "aws_session_token" {
+  type        = string
+  description = "The AWS Session Token"
+}
