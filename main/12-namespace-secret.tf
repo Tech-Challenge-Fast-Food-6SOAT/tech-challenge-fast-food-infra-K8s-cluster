@@ -15,7 +15,7 @@ resource "kubernetes_namespace" "lanchonete_pedido_namespace" {
 resource "kubernetes_secret" "lanchonete_pedido_secret" {
   metadata {
     name      = "pedido-app-secrets"
-    namespace = local.namespace_pedido
+    namespace = kubernetes_namespace.lanchonete_pedido_namespace.metadata[0].name
   }
 
   data = {
@@ -26,7 +26,7 @@ resource "kubernetes_secret" "lanchonete_pedido_secret" {
   }
 
   type       = "Opaque"
-  depends_on = [aws_eks_cluster.eks]
+  depends_on = [kubernetes_namespace.lanchonete_pedido_namespace]
 }
 
 resource "kubernetes_namespace" "lanchonete_produto_namespace" {
@@ -40,7 +40,7 @@ resource "kubernetes_namespace" "lanchonete_produto_namespace" {
 resource "kubernetes_secret" "lanchonete_produto_secret" {
   metadata {
     name      = "produto-app-secrets"
-    namespace = local.namespace_produto
+    namespace = kubernetes_namespace.lanchonete_produto_namespace.metadata[0].name
   }
 
   data = {
@@ -51,7 +51,7 @@ resource "kubernetes_secret" "lanchonete_produto_secret" {
   }
 
   type       = "Opaque"
-  depends_on = [aws_eks_cluster.eks]
+  depends_on = [kubernetes_namespace.lanchonete_produto_namespace]
 }
 
 resource "kubernetes_namespace" "lanchonete_pagamento_namespace" {
@@ -65,7 +65,7 @@ resource "kubernetes_namespace" "lanchonete_pagamento_namespace" {
 resource "kubernetes_secret" "lanchonete_pagamento_secret" {
   metadata {
     name      = "pagamento-app-secrets"
-    namespace = local.namespace_pagamento
+    namespace = kubernetes_namespace.lanchonete_pagamento_namespace.metadata[0].name
   }
 
   data = {
@@ -76,5 +76,5 @@ resource "kubernetes_secret" "lanchonete_pagamento_secret" {
   }
 
   type       = "Opaque"
-  depends_on = [aws_eks_cluster.eks]
+  depends_on = [kubernetes_namespace.lanchonete_pagamento_namespace]
 }
