@@ -1,7 +1,8 @@
-name: "Terraform deploy infra"
+name: "Terraform plan infra"
 
 on:
-  push: 
+  pull_request:
+    types: [opened, synchronize, reopened]
     branches: ["main"]
     paths: ["main/**"]
   workflow_dispatch:
@@ -17,7 +18,7 @@ env:
 
 jobs: 
   terraform:
-    name: "Terraform deploy infra"
+    name: "Terraform plan infra"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Configure AWS Credentials" 
@@ -58,7 +59,3 @@ jobs:
       - name: Terraform Plan Status
         if: steps.plan.outcome == 'failure'
         run: exit 1
-
-      - name: Terraform Apply 
-        working-directory: ./main
-        run: terraform apply --auto-approve
