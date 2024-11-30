@@ -1,3 +1,8 @@
+variable "role_arn" {
+  type        = string
+  description = "The ARN of the IAM Role"
+}
+
 variable "aws_vpc_name" {
   type    = string
   default = "lanchonete-vpc"
@@ -6,11 +11,6 @@ variable "aws_vpc_name" {
 variable "aws_igw_name" {
   type    = string
   default = "lanchonete-igw"
-}
-
-variable "role_arn" {
-  type        = string
-  description = "The ARN of the IAM Role"
 }
 
 variable "mongodb_connection_string_pedido" {
